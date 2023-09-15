@@ -1,0 +1,37 @@
+$primaryTextColor: #111321; //* основний текст - в картках *//
+$TextColor: #f4f4f4; //*  колір тексту при темній темі   *//
+$shopNowButton: #000000; //* чорний колір тексту по необхідності *//
+$primaryBgColor: #f4f4f4; //*  колір тексту при темній темі   *//
+$CalendarDataTextColor: #2e2e2e; //* колір тексту дати на календарі *//
+$CalendarTextColor: #a8a8a8; //* колір тексту дати на календарі *//
+$witeTextColor: #ffffff; //* білий колір тексту на карточці погоди *//
+$whiteTextColor: #ffffff; //* білий колір тексту на карточці погоди *//
+$TextHaveReadColor: #00dd73; //* колір тексту AlreadyRead *//
+$primarySwitchColor: #4b48db;
+$secondarySwitchColor: #5f6775;
+$hoverColor: #4440f6; //* Колір ховеру, картка погоди, колір тексту в списках *//
+$footerBgColor: #7a7a7a; //* колір футеру *//
+$calendarBgColor: #f8f8f8;
+
+$cardImgBgColor: rgb(141, 129, 129); //*  *//
+$cardInfoLinkBgColor: rgba(68, 64, 247, 0.7); //*  *//
+$wetherBtnColor: rgba(254, 254, 255, 0.3);
+$borderHeaderColor: rgba(0, 0, 0, 0.2); //* колір бордеру хедера *//
+
+$boxShadow: 0px 8px 20px rgba(67, 116, 229, 0.5),
+  0px 4px 10px rgba(255, 255, 255, 0.1);
+
+//---------------------//
+$primaryFontManrope: 'Manrope', sans-serif;
+$wetherFontRoboto: 'Roboto', sans-serif;
+
+$primaryBorderRadius: 32px;
+$cardBorderRadius: 4px;
+$paginationBtnBorderRadius: 2px;
+$primaryFontSize: 22px;
+$primaryLineHeight: calc(44px / 32px);
+$secondaryLineHeight: calc(22px / 16px);
+
+//* Анімація */
+$durationFunction: 250ms;
+$timingFunction: cubic-bezier(0.4, 0, 0.2, 1);

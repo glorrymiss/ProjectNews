@@ -1,0 +1,42 @@
+<main class="main">
+  <section>
+    <h1 class="visually-hidden">Favorite page</h1>
+    <div class="container favorite">
+      <include src="./partials/pre-loader.html"></include>
+      <div class="errorRequest visually-hidden">
+        <p class="err__text">We haven’t found news from this category</p>
+
+        <picture>
+          <source
+            srcset="
+              ./images/not-found-news-de-min.png    1x,
+              ./images/not-found-news-de@2x-min.png 2x
+            "
+            media="(min-width: 1280px)"
+          />
+          <source
+            srcset="
+              ./images/not-found-news-tab-min.png    1x,
+              ./images/not-found-news-tab@2x-min.png 2x
+            "
+            media="(min-width: 768px)"
+          />
+          <source
+            srcset="
+              ./images/not-found-news-mob-min.png    1x,
+              ./images/not-found-news-mob@2x-min.png 2x
+            "
+            media="(max-width: 767px)"
+          />
+          <img
+            src="./images/not-found-news-de-min.png"
+            alt="photo"
+            class="err_img"
+            loading="lazy"
+          />
+        </picture>
+      </div>
+      <ul class="gallery"></ul>
+    </div>
+  </section>
+</main>

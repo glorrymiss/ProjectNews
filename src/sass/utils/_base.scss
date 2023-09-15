@@ -1,0 +1,86 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #716b60;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px; /* roundness of the scroll thumb */
+    border: 3px solid $hoverColor; /* creates padding around scroll thumb */
+  }
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding-top: 81px;
+  font-family: $primaryFontManrope;
+  font-size: $primaryFontSize;
+  font-weight: 700;
+  background-color: $primaryBgColor;
+  color: $primaryTextColor;
+  @include tablet {
+    padding-top: 106px;
+  }
+  @include desktop {
+    padding-top: 113px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+address {
+  font-style: normal;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.body-scroll {
+  overflow: hidden;
+}
+
+.wrapper-page {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: auto;
+}

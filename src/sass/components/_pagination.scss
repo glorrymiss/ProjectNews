@@ -1,0 +1,147 @@
+button:active{
+  color: $primaryTextColor;
+}
+
+.pagination {
+  display:flex;
+ margin-top: 60px;
+ 
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pg-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 33px;
+  height: 31px;
+background-color: $primaryBgColor;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: $secondaryLineHeight;
+transition: all 500ms $timingFunction;
+  color: $primaryTextColor;
+  border: 1px solid $hoverColor;
+  border-radius: 2px;
+
+  &--border {
+    width: 13px;
+    border: none;
+    background-color: transparent;
+  }
+}
+.numbPageCount {
+  gap: 8px;
+}
+.prev-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+background-color: $primaryBgColor;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  border: 1px solid $hoverColor;
+  border-radius: 2px;
+  padding: 4px 10px 5px 0;
+  transition: transform 800ms $timingFunction;
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &::after{
+    content: '';
+  background: $hoverColor;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 2px;
+  
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+
+  }
+  &:active::after{
+    width: 0px;
+  opacity: 1;
+  transition: 0s;
+  }
+}
+
+.next-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+background-color: $primaryBgColor;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  border: 1px solid $hoverColor;
+  border-radius: 2px;
+  padding: 4px 0 5px 10px;
+  transition: transform 800ms $timingFunction;
+
+  &:active {
+    transform: scale(0.9);
+  }
+  &::after{
+    content: '';
+  background: $hoverColor;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+
+  }
+  &:active::after{
+    width: 0px;
+  opacity: 1;
+  transition: 0s;
+  }
+}
+.prev-page:active .arrow-left {
+  fill: $hoverColor;
+}
+.next-page:active .arrow-right {
+  fill: $hoverColor;
+}
+
+.active {
+  color: #f4f4f4;
+
+  background-color: $hoverColor;
+}
+
+.arrow-left {
+  margin-right: 10.22px;
+  margin-left: 17px;
+  fill: currentColor;
+  transition: all 250ms $timingFunction;
+}
+
+.arrow-right {
+  margin-right: 16px;
+  margin-left: 9.34px;
+  fill: currentColor;
+  transition: all 250ms $timingFunction;
+}

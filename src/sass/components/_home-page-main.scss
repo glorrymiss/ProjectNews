@@ -1,0 +1,45 @@
+:root {
+  --countCard: 1;
+  --gapCard: 28px;
+  @media screen and (min-width: 768px) {
+    --countCard: 2;
+    --gapCard: 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    --countCard: 3;
+    --gapCard: 31px;
+  }
+}
+.categories {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  @media screen and (min-width: 768px) {
+    padding-top: 28px;
+    padding-bottom: 48px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 60px;
+  }
+}
+.section_home {
+  padding-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 100px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 150px;
+  }
+}
+.container .gallery {
+  @include grid(var(--gapCard), var(--countCard));
+  & .card {
+    width: auto;
+    height: auto;
+  }
+  & .weather__thumb {
+    grid-column-start: var(--countCard);
+    grid-column-end: var(--countCard);
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+}

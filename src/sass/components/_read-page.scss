@@ -1,0 +1,63 @@
+.date-title .icon-down-read-pg {
+  fill: var(--header-text-color);
+  cursor: pointer;
+  transition: transform 350ms $timingFunction;
+  transform: rotate(0deg);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.date-title.rotate .icon-down-read-pg {
+  transition: transform 350ms $timingFunction;
+  transform: rotate(-180deg);
+}
+
+.section-read {
+  padding-top: 40px;
+  padding-bottom: 140px;
+  @include tablet {
+    padding-top: 48px;
+    padding-bottom: 180px;
+  }
+  @include desktop {
+    padding-top: 60px;
+    padding-bottom: 210px;
+  }
+}
+
+.date-title {
+  display: flex;
+
+  border-bottom: 1px solid #929292;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+
+.data-block .btn-span {
+  pointer-events: none;
+  z-index: -1;
+}
+
+.btn-span {
+  margin-right: 15px;
+  color: var(--header-text-color);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.date-title + .gallery.visually-hidden {
+  transition: width 350ms $timingFunction, opacity 500ms $timingFunction;
+
+  opacity: 0;
+  width: 1%;
+}
+
+.date-title + .gallery {
+  transition: width 350ms $timingFunction, opacity 500ms $timingFunction;
+  opacity: 1;
+  width: 100%;
+}
+
+.date-title + .gallery {
+  padding-bottom: 20px;
+}

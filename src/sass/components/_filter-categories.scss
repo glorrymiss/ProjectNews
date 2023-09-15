@@ -1,0 +1,343 @@
+//@import '~node_modules/modern-normalize/modern-normalize.css';
+$desctop: 1280px;
+$tablet: 768px;
+$mobile: 480px;
+
+:root {
+  // --bthBgColor: #f4f4f4;
+  //--calendar-btn-color: #a2a2a2;
+
+  --mainBgcolor: #f4f4f4;
+  --countCard: 1;
+  --gapCard: 30px;
+  // @media screen and (min-width: $tablet) {
+  //   --countCard: 2;
+  //   --gapCard: 30px;
+  // }
+  // @media screen and (min-width: $desctop) {
+  //   --countCard: 3;
+  //   --gapCard: 30px;
+  // }
+}
+
+#categories-show {
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  column-gap: 16px;
+}
+
+#categories-hide {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1px;
+  width: max-content;
+  // padding: 10px 20px;
+  padding-right: 10px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: $calendarBgColor;
+}
+
+#categories-hide .categories__item {
+  border: none;
+  text-align: start;
+  padding: 5px;
+  // border-radius: 4px;
+  cursor: pointer;
+  background-color: $calendarBgColor;
+
+  &:hover,
+  &:focus {
+    text-decoration-line: underline;
+    background-color: inherit;
+    color: $primarySwitchColor;
+  }
+  &.activ {
+    background-color: $primarySwitchColor;
+  }
+}
+
+#categories-toggler {
+  padding: 7px 12px;
+  @media screen and (min-width: $tablet) {
+    padding: 7px 22px;
+  }
+}
+
+.filter {
+  margin: 0;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background: $calendarBgColor;
+  padding: 20px 0 20px 10px;
+
+  position: absolute;
+  top: 35px;
+  left: 0;
+  //overflow-y: scroll;
+  z-index: 3;
+
+  transform: translateY(-201%);
+  transition: transform $durationFunction $timingFunction;
+
+  &-wrapper {
+    padding: 5px;
+    pointer-events: none;
+    border-radius: 20px;
+    background: transparent;
+    position: absolute;
+    width: 150px;
+    height: 300px;
+    overflow: hidden;
+    z-index: 5;
+    filter: drop-shadow(0px 10px 60px rgba(0, 0, 0, 0.2));
+  }
+
+  &-show {
+    pointer-events: all;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+  }
+}
+
+.filter__btn span {
+  font-family: $primaryFontManrope;
+  margin-right: 10px;
+}
+
+// .filter__btn svg {
+//   fill: currentColor;
+// }
+.categories__icon.rotate {
+  transform: rotate(-180deg);
+}
+.categories__icon {
+  fill: currentColor;
+  transform: rotate(0deg);
+  transition: transform $durationFunction $timingFunction;
+}
+
+.categories__item,
+.filter__btn {
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  font-family: $primaryFontManrope;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.3334;
+
+  color: $primarySwitchColor;
+  background-color: var(--bthBgColor);
+  text-align: center;
+  padding: 7px 22px;
+  border: 1 solid;
+  border-color: $primarySwitchColor;
+  border-radius: 20px;
+  cursor: pointer;
+
+  transition: $durationFunction $timingFunction;
+  transition-property: background-color, border-color;
+  &.activ,
+  &:hover,
+  &:focus {
+    background-color: $primarySwitchColor;
+    color: $witeTextColor;
+    border-color: $primarySwitchColor;
+  }
+}
+
+// .categories__item.activ {
+//   background-color: $primarySwitchColor;
+//   color: $witeTextColor;
+//   border-color: $primarySwitchColor;
+// }
+
+#menu-calendar.filter__btn {
+  padding-right: 30px;
+  width: 168px;
+}
+
+.categories {
+  font-family: $primaryFontManrope;
+
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  min-width: 320px;
+  max-width: $mobile;
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+  }
+  @media screen and (min-width: $desctop) {
+    max-width: $desctop;
+  }
+}
+
+.categories__container {
+  position: relative;
+  margin-right: auto;
+  margin-left: 16px;
+}
+
+.categories__container.no-categories {
+  margin-left: 0px;
+}
+
+.calendar {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  align-items: center;
+}
+
+// .calendar .wrapper {
+//   top: 36px;
+//   right: 0;
+
+//   @media screen and (min-width: $desctop) {
+//     right: 36px;
+//   }
+// }
+
+.calendar__text {
+  color: var(--gallery-text-color);
+  white-space: nowrap;
+  font-size: 18px;
+  line-height: 1.3888;
+  font-weight: 700;
+  display: none;
+
+  @media screen and (min-width: $desctop) {
+    display: block;
+  }
+}
+
+.calendar__btn {
+  margin: 0;
+  width: 152px;
+  display: flex;
+  align-items: center;
+
+  //color: $primaryTextColor;
+  color: #a2a2a2; // var(--calendar-btn-color);
+  background-color: var(--calendar-bg-color);
+  text-align: center;
+  padding: 5px 12px;
+  border: 1 solid;
+  border-color: var(--calendar-border);
+  border-radius: 20px;
+  cursor: pointer;
+
+  transition: $durationFunction $timingFunction;
+  transition-property: background-color, border-color;
+
+  &:hover,
+  &:focus {
+    background-color: $primarySwitchColor;
+    color: $witeTextColor;
+    border-color: $primarySwitchColor;
+    & .calendar__icon {
+      fill: currentColor;
+    }
+  }
+
+  & .calendar__icon {
+    fill: $primarySwitchColor;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 168px;
+  }
+  @media screen and (min-width: $desctop) {
+    margin: 0 37px;
+  }
+}
+
+.calendar__icon {
+  fill: currentColor;
+}
+.calendar__btn:hover .calendar-btn-span {
+  color: $witeTextColor;
+}
+.calendar-btn-span {
+  padding: 0 12px;
+  color: var(--calendar-text-color);
+  font-family: $primaryFontManrope;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.75;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.errorRequest {
+  font-family: $primaryFontManrope;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.35;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-top: 40px;
+
+  max-width: $mobile;
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+    font-size: 40px;
+    line-height: 1.375;
+    padding: 0 104px;
+    padding-top: 88px;
+  }
+  @media screen and (min-width: $desctop) {
+    max-width: $desctop;
+    padding: 0 340px;
+    padding-top: 120px;
+  }
+}
+
+.errorRequest picture {
+  display: flex;
+  justify-content: center;
+}
+
+.errorRequest p {
+  width: 280px;
+  margin-bottom: 40px;
+  @media screen and (min-width: $tablet) {
+    width: 600px;
+  }
+}
+
+.inFavorite .wrap-image__icon {
+  display: block;
+  fill: $hoverColor;
+  stroke: $hoverColor;
+}
+
+.inRead {
+  opacity: 0.4;
+}

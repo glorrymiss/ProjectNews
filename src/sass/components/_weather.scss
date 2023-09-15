@@ -1,0 +1,212 @@
+.weather__thumb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: 448px;
+  // width: 288px;
+  height: 520px;
+
+  font-family: $wetherFontRoboto;
+  font-weight: 400;
+
+  color: $witeTextColor;
+  background-color: #4440f7;
+  mix-blend-mode: normal;
+  border-radius: 4px;
+
+  @include tablet {
+    width: 353px;
+    height: 675px;
+
+    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  @include desktop {
+    width: 395px;
+  }
+}
+
+.weather__icon {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform $durationFunction $timingFunction;
+
+  // border-radius: 50%;
+  // background: linear-gradient(180deg, #fa6c21 0%, rgba(255, 211, 88, 0.2) 100%);
+  // box-shadow: inset 0px 20px 65px #fa6c21;
+
+  @include tablet {
+    width: 235px;
+    height: 235px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+.weather__info {
+  display: flex;
+  align-items: center;
+}
+
+.weather__temp {
+  font-size: 55px;
+  margin-right: 8px;
+
+  @include tablet {
+    font-size: 64px;
+  }
+}
+
+.weather__add-info {
+  border-left: 1px solid #ffffff;
+}
+
+.weather__cond {
+  font-size: 24px;
+  margin-left: 8px;
+  margin-bottom: 5px;
+
+  text-transform: capitalize;
+
+  @include tablet {
+    font-size: 36px;
+  }
+}
+
+.weather__location--thumb {
+  font-size: 14px;
+  margin-left: 8px;
+
+  width: auto;
+  max-width: 180px;
+  overflow-wrap: break-word;
+
+  display: flex;
+  align-items: center;
+
+  padding: 9.5px 11.22px;
+
+  background: $wetherBtnColor;
+  border-radius: 10px;
+
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+.weather__location--icon {
+  fill: $witeTextColor;
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+
+  @include tablet {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+.weather__date {
+  text-align: center;
+  font-size: 28px;
+
+  margin-bottom: 26px;
+
+  @include tablet {
+    font-size: 36px;
+  }
+}
+
+.weather__week {
+  font-size: 16px;
+  color: inherit;
+
+  width: auto;
+
+  padding: 8px 14px;
+
+  background: $wetherBtnColor;
+  border-radius: 10px;
+  border: none;
+
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+// Погода на неделю
+
+.weather__week--list {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 140px;
+  gap: 10px;
+  width: calc(330px - 75px + 10px);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform $durationFunction $timingFunction;
+  @include tablet {
+    top: 200px;
+  }
+}
+
+.weather__week--thumb {
+  width: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+
+  font-size: 15px;
+  height: auto;
+  padding: 3px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weather__week-date {
+  margin-bottom: 5px;
+}
+
+.weather__week-icon {
+  width: 40px;
+  height: 40px;
+
+  // border-radius: 50%;
+  // background: linear-gradient(180deg, #fa6c21 0%, rgba(255, 211, 88, 0.2) 100%);
+  // box-shadow: inset 0px 20px 65px #fa6c21;
+}
+
+.weather__week-temp--thumb {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.weather__week-temp--day {
+  padding-right: 5px;
+  border-right: 1px solid #ffffff;
+}
+
+.weather__week-temp--night {
+  padding-left: 5px;
+}
+
+.display-none {
+  opacity: 0;
+  transform: translateX(-100%);
+  // display: none;
+}

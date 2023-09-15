@@ -1,0 +1,213 @@
+.header {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  padding-top: 24px;
+  height: 81px;
+
+  background-color: #fff;
+
+  border-bottom: 1px solid $borderHeaderColor;
+  width: 100%;
+
+  @include tablet {
+    padding-top: 32px;
+    height: 106px;
+  }
+
+  @include desktop {
+    padding-top: 28px;
+    height: 113px;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-nav {
+  display: flex;
+}
+
+.logo {
+  // z-index: 555;
+  margin-right: auto;
+  color: $primaryTextColor;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.38;
+  cursor: pointer;
+
+  @include tablet {
+    font-size: 32px;
+    margin-right: 48px;
+  }
+
+  @include desktop {
+    font-size: 42px;
+    margin-right: 102px;
+  }
+
+  transition: text-shadow $durationFunction $timingFunction;
+
+  &:hover,
+  &:focus {
+    text-shadow: $boxShadow;
+  }
+}
+
+.header-navigation {
+  gap: 44px;
+  display: none;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
+
+  @include desktop {
+    gap: 69px;
+  }
+}
+
+.menu-link {
+  position: relative;
+  font-family: 'Manrope';
+  // display: flex;
+  font-weight: 700;
+  font-size: 16px;
+  color: $primaryTextColor;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+  line-height: 1.38;
+  // position: relative;
+
+  transition: text-shadow $durationFunction $timingFunction;
+
+  &:hover,
+  &:focus {
+    text-shadow: $boxShadow;
+  }
+
+  @include desktop {
+    // width: 1280px;
+    font-size: 18px;
+    // gap: 69px;
+  }
+}
+
+.menu-link.current::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: $hoverColor;
+}
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+
+  @include tablet {
+    margin-left: 32px;
+    margin-right: 24px;
+  }
+
+  @include desktop {
+    margin-left: 147px;
+    margin-right: 137px;
+  }
+}
+
+.btn-search {
+  width: 20px;
+  height: 20px;
+  background: none;
+  // box-shadow: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+}
+
+.input-text {
+  display: none;
+  width: 173px;
+  padding: 5px 20px 5px 48px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  border: 1px solid $primaryTextColor;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--header-text-color);
+  border-radius: 20px;
+
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  transition: box-shadow $durationFunction $timingFunction;
+
+  &:hover,
+  &:focus {
+    box-shadow: $boxShadow;
+  }
+
+  @include tablet {
+    display: block;
+    width: 213px;
+  }
+
+  @include desktop {
+    width: 288px;
+  }
+}
+
+.btn-search {
+  @include tablet {
+    position: absolute;
+    left: 12px;
+  }
+}
+
+.mob-input {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.71;
+  height: 31px;
+  width: 170px;
+  min-height: 30px;
+  border-radius: 20px;
+  outline: none;
+  border: 1px solid #111321;
+  padding-left: 50px;
+  transition: box-shadow $durationFunction $timingFunction;
+
+  &:hover,
+  &:focus {
+    box-shadow: $boxShadow;
+  }
+}
+
+.mob-icon-position {
+  position: absolute;
+  top: 6px;
+  left: 14px;
+}

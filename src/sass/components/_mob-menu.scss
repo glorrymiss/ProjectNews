@@ -1,0 +1,196 @@
+.burger-wraper {
+  // display: none;
+}
+
+.mobile__menu-wraper {
+  display: none;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  // margin-right: auto;
+  color: $primaryTextColor;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.38;
+  cursor: pointer;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  // z-index: 2;
+  font-family: $primaryFontManrope;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  color: $primaryTextColor;
+}
+
+.mobile__menu-btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 50;
+  overflow: hidden;
+  margin-left: auto;
+  cursor: pointer;
+
+  @include tablet {
+    display: none;
+  }
+
+  &.isMenuOpen {
+    background-color: var(--color-bg);
+    position: absolute;
+    top: 28px;
+    right: 16px;
+    opacity: 1;
+    transform: translateY(0%);
+    transition: opacity 1000ms $timingFunction, transform 600ms $timingFunction;
+  }
+}
+
+.mobile__menu-btn span {
+  width: 18px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--header-text-color);
+  transition: transform $durationFunction $timingFunction;
+}
+
+.mobile__menu-btn span:nth-of-type(2) {
+  top: calc(50% - 4px);
+}
+
+.mobile__menu-btn span:nth-of-type(3) {
+  top: calc(50% + 4px);
+}
+
+/* Меню, которое будет появляться */
+.mobile__menu {
+   background-color: var(--color-bg);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  padding-top: 24px;
+  padding-bottom: 18px;
+  opacity: 0;
+  transform: translateY(-120%);
+  transition: opacity 900ms ease-in, transform 900ms ease-in;
+  @include tablet {
+    display: none;
+  }
+}
+
+.mobile__menu-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 68px;
+  gap: 24px;
+}
+
+.mobile__menu.isMenuOpen {
+  background-color: var(--color-bg);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg);
+  z-index: 2;
+  opacity: 1;
+  transform: translateY(0%);
+transition: all 900ms ease-in-out;}
+
+// .isMenuOpen {
+//   background-color: var(--color-bg);
+// }
+
+.mobile__menu-item {
+  display: flex;
+  height: 44px;
+  list-style-type: none;
+  align-items: center;
+  gap: 13px;
+  // background-color: $hoverColor;
+}
+
+.mobile__menu-link {
+  font-family: $primaryFontManrope;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--header-text-color);
+  display: block;
+  width: 100%;
+}
+
+.mobile__menu-item.active {
+  background-color: $hoverColor;
+}
+
+.mobile__menu-item.active .mobile__menu-link {
+  color: $TextColor;
+}
+
+.mobile__menu-item.active .mobile__menu-icon {
+  stroke: $TextColor;
+  // stroke-width: 1.5px;
+}
+
+.mobile__menu-item.active .mobile__menu-icon__arrow {
+  stroke: $TextColor;
+}
+
+.mobile__menu-icon {
+  stroke: none;
+  margin-left: 16px;
+}
+
+.mobile__menu-icon__arrow {
+  margin-left: auto;
+  margin-right: 16px;
+  fill: none;
+}
+
+/* Меняем гамбургер иконку, когда меню открыто */
+
+.mobile__menu-btn.isMenuOpen span:nth-of-type(1) {
+  display: none;
+}
+
+.mobile__menu-btn.isMenuOpen span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.mobile__menu-btn.isMenuOpen span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+.container-mobile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.toggleWrapper_mobile {
+  padding-left: 16px;
+  gap: 8px;
+  align-items: center;
+  display: flex;
+}
+
+.mobile__menu-btn > span {
+  pointer-events: none;
+}

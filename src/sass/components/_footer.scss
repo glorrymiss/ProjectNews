@@ -1,0 +1,175 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100%;
+    height: 120px;
+    background-color: $footerBgColor;
+
+    @include tablet {
+        height: 146px;
+    }
+}
+
+.footer__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer__container {
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+}
+
+.footer__text,
+.footer__team {
+    font-family: 'Manrope';
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1.2;
+
+    @media screen and (min-width: 480px) {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+}
+
+.footer__icon {
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+    fill: $hoverColor;
+    width: 18px;
+    height: 18px;
+}
+
+
+.footer__btn {
+    margin-left: 3px;
+    outline: none;
+    background-color: $footerBgColor;
+    color: inherit;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+    cursor: pointer;
+
+
+}
+
+.button__list {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+.button__item {
+    position: absolute;
+    display: block;
+    border-radius: 12px;
+}
+
+.button__item:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, $hoverColor);
+    animation: btn-anim1 1.6s linear infinite;
+}
+
+.button__item:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, $hoverColor);
+    animation: btn-anim2 1.6s linear infinite;
+    animation-delay: 0.4s
+}
+
+.button__item:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, transparent, $hoverColor);
+    animation: btn-anim3 1.6s linear infinite;
+    animation-delay: 0.8s
+}
+
+.button__item:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, $hoverColor);
+    animation: btn-anim4 1.6s linear infinite;
+    animation-delay: 1.2s
+}
+
+
+
+.footer__btn:focus .button__item,
+.footer__btn:hover .button__item {
+    animation: none;
+}
+
+.footer__btn:focus .button__list ,
+.footer__btn:hover .button__list {
+   color: $whiteTextColor;
+}
+
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
